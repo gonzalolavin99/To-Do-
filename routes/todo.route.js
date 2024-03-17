@@ -1,20 +1,20 @@
-import { todoModel } from "../model/todo.model";
+import { todoController } from "../controllers/todo.controller.js";
 import { Router } from "express";
 const router = Router();
 
 //GET /todos
-router.get("/", async (req, res) => {});
+router.get("/", todoController.read);
 
 //GET /todos/:id
-router.get("/:id", async (req, res) => {});
+router.get("/:id", todoController.readById);
 
 //POST /todos
-router.post("/", async(req,res)=>{})
+router.post("/", todoController.create);
 
 //PUT  /todos/:id
-router.put('/:id',async (req,res)=> {});
+router.put("/:id", todoController.update);
 
 //DELETE /todos/:id
-router.delete('/:id',async (req,res)=>{});
+router.delete("/:id", todoController.remove);
 
-export  default router;
+export default router;
